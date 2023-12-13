@@ -1,0 +1,49 @@
+@import './reset.css';
+
+.input {
+    display: flex;
+    justify-content: center;
+}
+
+.circle__move {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 20px;
+}
+
+.circle__move::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 40px;
+    height: 2px;
+    background-color: gray;
+    border-radius: 2.5px;
+}
+
+.circle__move::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 0;
+    width: 20px;
+    height: 20px;
+    background-color: gray;
+    border-radius: 50%;
+    transition: 0.6s;
+}
+
+#circle:checked + .circle__move::after {
+    background-color:aqua;
+    transition: 0.6s;
+    left: 20px;
+}
+
+#circle:checked + .circle__move::before {
+    background-color:aqua;
+}
